@@ -18,13 +18,18 @@ function populateTable(Sighting){
     row_fill.append("td").text(Sighting.datetime)
     row_fill.append("td").text(Sighting.city)
     row_fill.append("td").text(Sighting.state)
-    row_fill.append("td").text(Sighting.county)
+    row_fill.append("td").text(Sighting.country)
     row_fill.append("td").text(Sighting.shape)
     row_fill.append("td").text(Sighting.durationMinutes)
     row_fill.append("td").text(Sighting.comments)
 };
 
 tableData.forEach(populateTable);
+
+
+
+
+
 
 // 2: (Optional) * Using multiple `input` tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters
 // and search for UFO sightings using the following criteria based on the table columns
@@ -37,11 +42,10 @@ submitButton.on("click", function() {
   
     // TO DO: allow more than one way to enter a date or give error
     var inputValue1 = d3.select("#datetime").property("value");
-    // TO DO: allow upper or lowercase
-    var inputValue2 = d3.select("#city").property("value");
-    // TO DO: Dropdown for states
-    var inputValue3 = d3.select("#state").property("value");
-    var inputValue4 = d3.select("#country").property("value");
+    // modify to lower case
+    var inputValue2 = d3.select("#city").property("value").toLowerCase();
+    var inputValue3 = d3.select("#ddlState").property("value");
+    var inputValue4 = d3.select("#ddlCountry").property("value");
     var inputValue5 = d3.select("#shape").property("value");
 
     // Search for first field
