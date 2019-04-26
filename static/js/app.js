@@ -41,7 +41,7 @@ submitButton.on("click", function() {
     d3.event.preventDefault();
   
     // TO DO: allow more than one way to enter a date or give error
-    var inputValue1 = d3.select("#datetime").property("value");
+    var inputValue1 = d3.select("#date").property("value");
     // modify to lower case
     var inputValue2 = d3.select("#city").property("value").toLowerCase();
     var inputValue3 = d3.select("#ddlState").property("value");
@@ -102,6 +102,13 @@ resetButton.on("click", function() {
     d3.event.preventDefault();
     table_section.html("");
     tableData.forEach(populateTable);
+});
+
+// New entry redirect on index.html
+var submitButton = d3.select("#submit-btn");
+
+submitButton.on("click", function() {
+    window.location = "submit.html";
 });
 
 // SELF BONUS:: A form to enter new sightings which update the table upon enter

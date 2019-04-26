@@ -28,6 +28,11 @@
     <div class="container">
       <div class="row margin-top-50">
         <div class="col-md-2">
+        <aside class="filters">
+            <div class="btn-default">
+              <button id="submit-btn" type="button" class="btn btn-default">Submit a Sighting</button>
+            </div>
+          </aside>
           <aside class="filters">
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
@@ -37,18 +42,19 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <input class="form-control" id="date" type="text" placeholder="06/14/1947">
                       </li>
                       <li class="filter list-group-item">
-                        <label for="date">Enter a City</label>
+                        <label for="city">Enter a City</label>
                         <input class="form-control" id="city" type="text" placeholder="Akron">
                       </li>
+                      <!-- TO DO: Drop down selection black text -->
                       <!-- Dropdown menu for states and Provinces -->
-                      <li class="filter dropdown">
-                        <label for="date">Select a State/Province</label>
+                      <li class="filter list-group-item dropdown">
+                        <label for="ddlState">Select a State/Province</label>
                         <!-- <input class="form-control" id="state" type="text" placeholder="AK"> -->
                         <div class="">
-                          <div class="dropdown-content">
+                          <div class="dropdown-content" >
                           <select name="state" size="1" id="ddlState">
                             <option value="">- States/Provinces -</option>
                             <option disabled>- US States -</option>
@@ -121,9 +127,10 @@
                           </div>
                         </div>
                       </li>
+                      <!-- TO DO: Drop down selection black text -->
                       <!-- Dropdown menu for countries -->
-                      <li class="filter dropdown">
-                        <label for="date">Select a Country</label>
+                      <li class="filter list-group-item dropdown">
+                        <label for="ddlCountry">Select a Country</label>
                         <!-- <input class="form-control" id="country" type="text" placeholder="Argentina"> -->
                         <div class="">
                             <div class="dropdown-content">
@@ -135,15 +142,43 @@
                             </div>
                         </div>
                       </li>
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Shape</label>
-                        <input class="form-control" id="shape" type="text" placeholder="Circle">
+                      <!-- TO DO: Drop down selection black text -->
+                      <li class="filter list-group-item dropdown">
+                        <label for="ddlshape">Enter a Shape</label>
+                        <!-- <input class="form-control" id="country" type="text" placeholder="Argentina"> -->
+                        <div class="">
+                            <div class="dropdown-content">
+                            <select name="shape" size="1" id="ddlshape">
+                                <option value="">- Shape -</option>
+                                <option value="changing">changing</option> 
+                                <option value="chevrona">chevron</option> 
+                                <option value="cigar">cigar</option>
+                                <option value="circle">circle</option> 
+                                <option value="cross">cross</option> 
+                                <option value="cylinder">cylinder</option>
+                                <option value="disk">disk</option> 
+                                <option value="fireball">fireball</option> 
+                                <option value="flash">flash</option>
+                                <option value="formation">formation</option> 
+                                <option value="light">light</option> 
+                                <option value="other">other</option>
+                                <option value="oval">oval</option> 
+                                <option value="rectangle">rectangle</option> 
+                                <option value="sphere">sphere</option>
+                                <option value="teardrop">teardrop</option> 
+                                <option value="triangle">triangle</option> 
+                                <option value="unknown">unknown</option>
+                            </select>
+                          </div>
+                        </div>
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
-                  <br>
-                  <button id="reset-btn" type="button" class="btn btn-default" style="color:darkgray">Reset Table</button>
+                  <div style="display:flex; justify-content:space-between">
+                    <button id="filter-btn" type="submit" class="btn btn-default">Filter</button>
+                  
+                    <button id="reset-btn" type="button" class="btn btn-default" style="color:darkgray; align-self: flex-end">Clear</button>
+                  </div>   
                 </form>
               </div>
             </div>
