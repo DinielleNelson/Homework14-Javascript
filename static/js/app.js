@@ -1,5 +1,6 @@
 // // from data.js
 // var tableData1 = data; 
+// console.log(tableData1);
 
 // Maintain a copy of the data so that modifications are not made to the existing data
 var tableData = data.map(dict => dict);
@@ -27,10 +28,6 @@ function populateTable(Sighting){
 tableData.forEach(populateTable);
 
 
-
-
-
-
 // 2: (Optional) * Using multiple `input` tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters
 // and search for UFO sightings using the following criteria based on the table columns
 
@@ -42,11 +39,10 @@ submitButton.on("click", function() {
   
     // TO DO: allow more than one way to enter a date or give error
     var inputValue1 = d3.select("#date").property("value");
-    // modify to lower case
     var inputValue2 = d3.select("#city").property("value").toLowerCase();
     var inputValue3 = d3.select("#ddlState").property("value");
     var inputValue4 = d3.select("#ddlCountry").property("value");
-    var inputValue5 = d3.select("#shape").property("value");
+    var inputValue5 = d3.select("#ddlshape").property("value");
 
     // Search for first field
     if (inputValue1 !== ""){
