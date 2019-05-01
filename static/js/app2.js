@@ -1,5 +1,6 @@
 var approvalObject = approvals;
 console.log(approvalObject);
+console.log(approvals);
 
 var submitButton2 = d3.select("#submitNew-btn");
 
@@ -15,6 +16,7 @@ submitButton2.on("click", function() {
     var duration = document.getElementById("duration");
     var comment = document.getElementById("comments");
     
+    // TO DO: changes are showing in console but not persisting to approvals.js file
     approvalObject.push({
     date: date.value,
     city: city.value,
@@ -25,6 +27,11 @@ submitButton2.on("click", function() {
     });
     
     console.log(approvalObject);
+    console.log(approvals);
+
+    alert("Thank you for your submission! It will be reviewed within 2-4 weeks");
+    // TO DO: Reset fields
+    // document.getElementsByClassName("form-control").innerHTML = "";
 });
 
 
